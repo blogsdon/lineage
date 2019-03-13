@@ -7,7 +7,7 @@ Pull down DLPFC ANOVA results
 
 ```{r}
 synapser::synLogin()
-dlpfcObj <- synapser::synGet('syn18378476')
+dlpfcObj <- synapser::synGet('syn18407769')
 dlpfc <- readRDS(dlpfcObj$path)
 dlpfc$gene_names<-as.character(dlpfc$gene_names)
 View(dlpfc)
@@ -120,6 +120,5 @@ mapFunction <- function(x){
 dlpfc_enrich <- dplyr::mutate(dlpfc_enrich,BranchNumber = sapply(dlpfc_enrich$Branch,mapFunction))
 dlpfc_enrich <- dplyr::select(dlpfc_enrich,Term,Library,Direction,BranchNumber,P.value,Adjusted.P.value,Overlap,Z.score,Genes)
 
-write.table(dlpfc_enrich,file='go_dlpfc.tsv',sep='\t',row.names=F,quote=F)
+write.table(dlpfc_enrich,file='go_tcx.tsv',sep='\t',row.names=F,quote=F)
 ```
-
