@@ -119,6 +119,6 @@ mapFunction <- function(x){
 }
 dlpfc_enrich <- dplyr::mutate(dlpfc_enrich,BranchNumber = sapply(dlpfc_enrich$Branch,mapFunction))
 dlpfc_enrich <- dplyr::select(dlpfc_enrich,Term,Library,Direction,BranchNumber,P.value,Adjusted.P.value,Overlap,Z.score,Genes)
-
+dlpfc_enrich$Overlap <- paste0('0 ',dlpfc_enrich$Overlap)
 write.table(dlpfc_enrich,file='go_tcx.tsv',sep='\t',row.names=F,quote=F)
 ```

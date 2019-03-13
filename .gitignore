@@ -9,3 +9,7 @@ go_dlpfc.tsv
 go_tcx.csv
 go_tcx.tsv
 lineageTCX.nb.html
+enrichment_results.xlsx
+go_linclust.tsv
+resilience.nb.html
+~$enrichment_results.xlsx
